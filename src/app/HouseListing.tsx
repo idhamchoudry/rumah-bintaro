@@ -18,7 +18,7 @@ export default function HouseListing() {
     contact: {
       name: "Idham",
       phoneIntl: "6285929867810",
-      email: "idham@example.com",
+      email: "cnorson@gmail.com",
     },
     description: `Dijual cepat dan turun harga jauh di bawah pasaran.
 Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
