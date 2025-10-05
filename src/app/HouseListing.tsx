@@ -119,7 +119,7 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                 Dijual Cepat
               </span>
 
-              <h1 className="mt-2 text-[36px] md:text-[44px] font-extrabold leading-tight text-[var(--color-heading)]">
+              <h1 className="mt-2 text-[36px] md:text-[40px] font-extrabold leading-tight text-[var(--color-heading)]">
                 {DATA.title}
               </h1>
 
