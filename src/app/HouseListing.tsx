@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { MapPin } from "lucide-react"; // make sure lucide-react is installed
+import { Phone } from "lucide-react";
+import { Mail } from "lucide-react";
+import { MapIcon } from "lucide-react";
 
 export default function HouseListing() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -176,6 +179,7 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                     href={whatsappHref}
                     target="_blank"
                   >
+                    <Phone className="w-5 h-5" />
                     Hubungi via WhatsApp
                   </a>
                   <a
@@ -184,7 +188,8 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                       "Tanya: Rumah Dijual Bintaro — Graha Raya"
                     )}`}
                   >
-                    Email Penjual
+                    <Mail className="w-5 h-5" />
+                    Email
                   </a>
                   <a
                     className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-accent)] bg-[var(--color-accent)] px-4 py-3 font-bold text-[var(--color-accent-text)] hover:opacity-90 transition"
@@ -192,7 +197,8 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Lihat Map  
+                    <MapIcon className="w-5 h-5" />
+                    Lokasi  
                 </a>
                 </div>
               </div>
