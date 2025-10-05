@@ -56,10 +56,10 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
   )}`;
 
   const osmEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=${
-    DATA.coords.lng - 0.01
-  }%2C${DATA.coords.lat - 0.01}%2C${DATA.coords.lng + 0.01}%2C${
-    DATA.coords.lat + 0.01
-  }&layer=mapnik&marker=${DATA.coords.lat}%2C${DATA.coords.lng}`;
+    DATA.coords.lng - 0.003
+    }%2C${DATA.coords.lat - 0.003}%2C${DATA.coords.lng + 0.003}%2C${
+    DATA.coords.lat + 0.003
+    }&layer=mapnik&marker=${DATA.coords.lat}%2C${DATA.coords.lng}`;
 
   const closeLightbox = useCallback(() => setSelectedIndex(null), []);
   const showPrev = useCallback(
