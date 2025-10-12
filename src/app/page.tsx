@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Rumah Dijual Bintaro – Graha Raya (Kiwi Residence) | Turun Harga di Bawah Pasaran",
     description:
       "Rumah dijual cepat di Bintaro/Graha Raya. 2 KT, 1 KM, SHM, furnished. Akses tol, RSPI, BXchange, Alam Sutera, BSD.",
-    images: [{ url: "/house-1.jpeg", width: 1200, height: 630 }],
+    images: [{ url: "/house-2.jpeg", width: 1200, height: 630 }],
     locale: "id_ID",
     siteName: "Rumah Dijual Bintaro — Graha Raya",
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "Rumah Dijual Bintaro – Graha Raya (Kiwi Residence) | Turun Harga di Bawah Pasaran",
     description:
       "Rumah dijual cepat di Bintaro/Graha Raya. 2 KT, 1 KM, SHM, semi furnished.",
-    images: ["/house-1.jpeg",],
+    images: ["/house-2.jpeg",],
   },
   robots: { index: true, follow: true },
 };
