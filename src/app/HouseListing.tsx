@@ -6,6 +6,7 @@ import { MapPin } from "lucide-react"; // make sure lucide-react is installed
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 import { MapIcon } from "lucide-react";
+import { track } from "@vercel/analytics/react";
 
 export default function HouseListing() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -178,6 +179,13 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                     className="inline-flex items-center gap-2 rounded-xl border border-transparent bg-[var(--color-cta)] px-4 py-3 font-semibold text-[var(--color-heading)]"
                     href={whatsappHref}
                     target="_blank"
+                    onClick={(e) => {
+                      e.preventDefault(); // Stop instant navigation
+                      track("Whatsapp");
+                      setTimeout(() => {
+                        window.open(whatsappHref, "_blank", "noopener,noreferrer");
+                      }, 150);
+                    }}
                   >
                     <Phone className="w-5 h-5" />
                     Hubungi via WhatsApp
@@ -187,6 +195,14 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                     href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent(
                       "Tanya: Rumah Dijual Bintaro — Graha Raya"
                     )}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const href = e.currentTarget.href;
+                      track("Email");
+                      setTimeout(() => {
+                        window.open(href, "_blank", "noopener,noreferrer");
+                      }, 150);
+                    }}
                   >
                     <Mail className="w-5 h-5" />
                     Email
@@ -196,6 +212,15 @@ Lokasi Cluster Kiwi Residence Graha Raya Bintaro.
                     href={`https://www.google.com/maps?q=${DATA.coords.lat},${DATA.coords.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const href = e.currentTarget.href;
+                      track("OpenMap");
+                      setTimeout(() => {
+                        window.open(href, "_blank", "noopener,noreferrer");
+                      }, 150);
+                    }}
+
                 >
                     <MapIcon className="w-5 h-5" />
                     Lokasi  
