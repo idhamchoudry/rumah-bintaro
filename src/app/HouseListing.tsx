@@ -197,11 +197,11 @@ export default function HouseListing() {
       <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-8">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-heading)] text-white">
-              <span className="font-serif text-lg font-bold">R</span>
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)] text-white">
+              <span className="font-serif text-lg font-bold">Kiwi</span>
             </div>
-            <span className="font-serif text-lg font-semibold tracking-tight text-[var(--color-heading)]">
-              Rumah Bintaro
+            <span className="font-serif text-lg font-semibold tracking-tight text-[var(--color-accent)]">
+              Residence
             </span>
           </div>
 
