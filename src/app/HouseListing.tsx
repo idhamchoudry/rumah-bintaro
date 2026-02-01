@@ -73,10 +73,10 @@ const DATA = {
     },
   ],
   highlights: [
-    { label: "Electricity", value: "2200 watt" },
-    { label: "Water", value: "PDAM" },
-    { label: "Certificate", value: "SHM" },
-    { label: "Parking", value: "Carport 1 mobil" },
+    { label: "Listrik", value: "2200 watt" },
+    { label: "Air", value: "PDAM" },
+    { label: "Sertifikat", value: "SHM" },
+    { label: "Carport", value: "1 mobil" },
   ],
   stats: [
     { value: "2", label: "Bedrooms" },
