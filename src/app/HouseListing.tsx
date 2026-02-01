@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Stethoscope, ShoppingCart, Mail } from "lucide-react";
+import { Stethoscope, ShoppingCart, Mail, Car, Bike } from "lucide-react";
 import { track } from "@vercel/analytics/react";
 
 const WhatsappIcon = (props: React.ComponentProps<"svg">) => (
@@ -76,7 +76,7 @@ const DATA = {
     { label: "Listrik", value: "2200 watt" },
     { label: "Air", value: "PDAM" },
     { label: "Sertifikat", value: "SHM" },
-    { label: "Carport", value: "1 mobil" },
+    { label: "Carport", value: "1 Mobil 1 Motor" },
   ],
   stats: [
     { value: "2", label: "Bedrooms" },
@@ -192,7 +192,7 @@ export default function HouseListing() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-background)] pb-10 selection:bg-[var(--color-accent)] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-background)] selection:bg-[var(--color-accent)] selection:text-white">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-8">
@@ -402,9 +402,30 @@ export default function HouseListing() {
                   <span className="text-sm text-[var(--color-muted)]">
                     {item.label}
                   </span>
-                  <span className="mt-1 text-lg font-semibold text-[var(--color-heading)]">
-                    {item.value}
-                  </span>
+                  {item.label === "Carport" ? (
+                    <span className="mt-1 inline-flex items-center gap-4 text-lg font-semibold text-[var(--color-heading)]">
+                      <span className="inline-flex items-center gap-2">
+                        <Car
+                          className="h-7 w-7 text-[var(--color-heading)]"
+                          aria-hidden="true"
+                        />
+                        <span className="text-base font-semibold">1</span>
+                        <span className="sr-only">Mobil</span>
+                      </span>
+                      <span className="inline-flex items-center gap-2">
+                        <Bike
+                          className="h-6 w-7 text-[var(--color-heading)]"
+                          aria-hidden="true"
+                        />
+                        <span className="text-base font-semibold">1</span>
+                        <span className="sr-only">Motor</span>
+                      </span>
+                    </span>
+                  ) : (
+                    <span className="mt-1 text-lg font-semibold text-[var(--color-heading)]">
+                      {item.value}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
