@@ -15,6 +15,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://jualrumahbintaro.web.id"),
   title: "Rumah Dijual Bintaro — Graha Raya | Kiwi Residence",
   description:
     "Rumah dijual di Bintaro, Graha Raya (Kiwi Residence). LT 60 m², LB ± 50 m², 2 KT, 1 KM, listrik 2200W, 1 lantai + mezanine, carport 1. Furnished & SHM.",

@@ -198,9 +198,9 @@ export default function HouseListing() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-8">
           <div className="flex items-center gap-1">
             <div className="flex h-8 w-12 items-center justify-center rounded-lg bg-[var(--color-accent)] text-white">
-              <span className="font-serif text-lg font-bold">Kiwi</span>
+              <span className="font-serif text-lg font-semibold">Kiwi</span>
             </div>
-            <span className="font-serif text-lg font-semibold tracking-tight text-[var(--color-accent)]">
+            <span className="font-serif text-lg font-thin tracking-tight text-[var(--color-accent)]">
               Residence
             </span>
           </div>
