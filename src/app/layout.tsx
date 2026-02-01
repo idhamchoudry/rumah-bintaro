@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
+import { Fraunces, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -25,7 +26,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id">
-      <body className="bg-[#0b0c10] text-[#e8e8ea] antialiased">
+      <body
+        className={`${inter.variable} ${fraunces.variable} bg-[var(--color-bg)] text-[var(--color-text)] antialiased font-sans`}
+      >
         {children}
         <Analytics />
       </body>

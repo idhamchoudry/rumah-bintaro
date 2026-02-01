@@ -2,51 +2,68 @@
 
 /* === Global Light Theme (Default) === */
 :root {
-  --color-bg: #F5F5F5;
-  --color-surface: #F5F5F5;
-  --color-text: #4A4A4A;
-  --color-heading: #22406D;
-  --color-accent: #E6B800;
-  --color-accent-text: #ffffff;
-  --color-cta: #A8C686;
-  --color-chip: #22406D;
-  --color-chip-text: #ffffff;
-  --color-overlay: rgba(0, 0, 0, 0.8);
+  --color-bg: #F7F5F2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #F0EDE8;
+  --color-text: #1F2933;
+  --color-heading: #1F2933;
+  --color-accent: #2F6B57;
+  --color-accent-text: #F7F5F2;
+  --color-cta: #2F6B57;
+  --color-chip: #E9E4DC;
+  --color-chip-text: #1F2933;
+  --color-border: #E3DED6;
+  --color-muted: #5C6B70;
+  --color-overlay: rgba(12, 16, 20, 0.78);
 }
 
 /* === Tailwind Bridge === */
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text);
-  --font-sans: system-ui, Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
 }
 
 /* === Optional Dark Mode === */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #22406D;
-    --color-surface: #1E2D4D;
-    --color-text: #EDEDED;
-    --color-heading: #E6B800;
-    --color-accent: #E6B800;
-    --color-accent-text: #1E2D4D;
-    --color-cta: #9DBE7B;
-    --color-chip: #E6B800;
-    --color-chip-text: #1E2D4D;
-    --color-overlay: rgba(0, 0, 0, 0.85);
+    --color-bg: #F7F5F2;
+    --color-surface: #ffffff;
+    --color-surface-alt: #F0EDE8;
+    --color-text: #1F2933;
+    --color-heading: #1F2933;
+    --color-accent: #2F6B57;
+    --color-accent-text: #F7F5F2;
+    --color-cta: #2F6B57;
+    --color-chip: #E9E4DC;
+    --color-chip-text: #1F2933;
+    --color-border: #E3DED6;
+    --color-muted: #5C6B70;
+    --color-overlay: rgba(12, 16, 20, 0.78);
   }
 }
 
 /* === Global Body Reset === */
 body {
-  background-color: #fff;
+  background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
 }
 
 /* === Animations === */
 @keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-.animate-scaleIn { animation: scaleIn 0.25s ease-out; }
+
+.animate-scaleIn {
+  animation: scaleIn 0.25s ease-out;
+}
