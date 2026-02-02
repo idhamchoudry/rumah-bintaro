@@ -76,7 +76,7 @@ const DATA = {
     { label: "Listrik", value: "2200 watt" },
     { label: "Air", value: "PDAM" },
     { label: "Sertifikat", value: "SHM" },
-    { label: "Carport", value: "1 Mobil 1 Motor" },
+    { label: "Garasi", value: "1 Mobil 1 Motor" },
   ],
   stats: [
     { value: "2", label: "Bedrooms" },
@@ -283,7 +283,7 @@ export default function HouseListing() {
               {DATA.heroDescription}
             </motion.p>
 
-            {/* Price Card + CTAs - Combined for mobile single line */}
+            {/* Price Card + CTAs - Single line on mobile, stacked on desktop */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -294,36 +294,39 @@ export default function HouseListing() {
                 Starting Price
               </span>
 
-              {/* Single row container for all three elements */}
-              <div className="flex flex-nowrap items-center gap-2 w-full overflow-x-auto">
+              {/* Container - horizontal on mobile, vertical on desktop */}
+              <div className="flex flex-row md:flex-col gap-2 md:gap-4 w-full overflow-x-auto md:overflow-x-visible">
                 {/* Price Badge */}
-                <div className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-accent)] px-3 py-2 shrink-0 sm:px-4 sm:py-2.5">
-                  <span className="text-sm font-semibold text-white sm:text-base">{DATA.priceLabel}</span>
+                <div className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-accent)] px-3 py-2 shrink-0 self-start sm:px-4 sm:py-2.5 md:gap-2 md:px-5 md:py-3">
+                  <span className="text-sm font-semibold text-white sm:text-base md:text-lg">{DATA.priceLabel}</span>
                   <span className="text-xs text-white/80 sm:text-sm">{DATA.priceNote}</span>
                 </div>
 
-                {/* WhatsApp Button */}
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => track("Whatsapp")}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition hover:shadow-xl shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
-                >
-                  <WhatsappIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline">Hubungi via Whatsapp</span>
-                  <span className="sm:hidden">Whatsapp</span>
-                </a>
+                {/* Buttons container */}
+                <div className="flex flex-nowrap items-center gap-2 shrink-0 md:gap-3">
+                  {/* WhatsApp Button */}
+                  <a
+                    href={whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("Whatsapp")}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition hover:shadow-xl shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3"
+                  >
+                    <WhatsappIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span className="hidden sm:inline">Hubungi via Whatsapp</span>
+                    <span className="sm:hidden">Whatsapp</span>
+                  </a>
 
-                {/* Email Button */}
-                <a
-                  href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent("Tanya: Rumah Dijual Bintaro — Graha Raya")}`}
-                  onClick={() => track("Email")}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-white px-3 py-2 text-xs font-semibold text-[var(--color-heading)] transition hover:border-[var(--color-accent)] shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
-                >
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--color-accent)]" />
-                  Email
-                </a>
+                  {/* Email Button */}
+                  <a
+                    href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent("Tanya: Rumah Dijual Bintaro — Graha Raya")}`}
+                    onClick={() => track("Email")}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-white px-3 py-2 text-xs font-semibold text-[var(--color-heading)] transition hover:border-[var(--color-accent)] shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3"
+                  >
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--color-accent)]" />
+                    Email
+                  </a>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -403,7 +406,7 @@ export default function HouseListing() {
                   <span className="text-sm text-[var(--color-muted)]">
                     {item.label}
                   </span>
-                  {item.label === "Carport" ? (
+                  {item.label === "Garasi" ? (
                     <span className="mt-1 inline-flex items-center gap-4 text-lg font-semibold text-[var(--color-heading)]">
                       <span className="inline-flex items-center gap-2">
                         <Car
