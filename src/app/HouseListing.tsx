@@ -283,47 +283,48 @@ export default function HouseListing() {
               {DATA.heroDescription}
             </motion.p>
 
-            {/* Price Card */}
+            {/* Price Card + CTAs - Combined for mobile single line */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mt-8 inline-flex flex-col items-start gap-1"
+              className="mt-8 flex flex-col items-start gap-3"
             >
               <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-muted)]">
                 Starting Price
               </span>
-              <div className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-5 py-3">
-                <span className="text-lg font-semibold text-white">{DATA.priceLabel}</span>
-                <span className="text-sm text-white/80">{DATA.priceNote}</span>
-              </div>
-            </motion.div>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mt-8 flex flex-wrap gap-3"
-            >
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track("Whatsapp")}
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition hover:shadow-xl"
-              >
-                <WhatsappIcon className="h-5 w-5" />
-                Hubungi via Whatsapp
-              </a>
-              <a
-                href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent("Tanya: Rumah Dijual Bintaro — Graha Raya")}`}
-                onClick={() => track("Email")}
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-6 py-3 text-sm font-semibold text-[var(--color-heading)] transition hover:border-[var(--color-accent)]"
-              >
-                <Mail className="h-5 w-5 text-[var(--color-accent)]" />
-                Email
-              </a>
+              {/* Single row container for all three elements */}
+              <div className="flex flex-nowrap items-center gap-2 w-full overflow-x-auto">
+                {/* Price Badge */}
+                <div className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-accent)] px-3 py-2 shrink-0 sm:px-4 sm:py-2.5">
+                  <span className="text-sm font-semibold text-white sm:text-base">{DATA.priceLabel}</span>
+                  <span className="text-xs text-white/80 sm:text-sm">{DATA.priceNote}</span>
+                </div>
+
+                {/* WhatsApp Button */}
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("Whatsapp")}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition hover:shadow-xl shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
+                >
+                  <WhatsappIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="hidden sm:inline">Hubungi via Whatsapp</span>
+                  <span className="sm:hidden">Whatsapp</span>
+                </a>
+
+                {/* Email Button */}
+                <a
+                  href={`mailto:${DATA.contact.email}?subject=${encodeURIComponent("Tanya: Rumah Dijual Bintaro — Graha Raya")}`}
+                  onClick={() => track("Email")}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-white px-3 py-2 text-xs font-semibold text-[var(--color-heading)] transition hover:border-[var(--color-accent)] shrink-0 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
+                >
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--color-accent)]" />
+                  Email
+                </a>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -340,7 +341,7 @@ export default function HouseListing() {
               width={700}
               height={520}
               priority
-              className="h-[420px] w-full rounded-3xl object-cover shadow-2xl md:h-[480px]"
+              className="h-auto max-h-[420px] w-full rounded-3xl object-contain shadow-2xl md:h-[480px] md:object-cover"
             />
 
             {/* Floating Stats Card */}
