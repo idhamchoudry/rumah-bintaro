@@ -25,14 +25,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="id">
-      <body
-        className={`${inter.variable} ${fraunces.variable} bg-[var(--color-bg)] text-[var(--color-text)] antialiased font-sans`}
-      >
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
+  return  '200 OK';
+  // return (
+  //   <html lang="id">
+  //     <body
+  //       className={`${inter.variable} ${fraunces.variable} bg-[var(--color-bg)] text-[var(--color-text)] antialiased font-sans`}
+  //     >
+  //       {children}
+  //       <Analytics />
+  //     </body>
+  //   </html>
+  // );
 }
