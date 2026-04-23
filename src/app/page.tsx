@@ -36,5 +36,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HouseListing />;
+  return '200 OK';
+  // return <HouseListing />;
 }
